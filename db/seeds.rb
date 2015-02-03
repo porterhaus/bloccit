@@ -13,7 +13,7 @@ require 'faker'
  users = User.all
  
   # Create Topics
- 15.times do
+ 150.times do
    Topic.create!(
      name:         Faker::Lorem.sentence,
      description:  Faker::Lorem.paragraph
@@ -22,7 +22,7 @@ require 'faker'
  topics = Topic.all
 
  # Create Posts
- 50.times do
+ 1500.times do
    Post.create!(
      user:   users.sample,
      topic:  topics.sample,
@@ -32,7 +32,7 @@ require 'faker'
  end
  posts = Post.all
 
-100.times do
+1000.times do
    Comment.create!(
      # user: users.sample,   # we have not yet associated Users with Comments
      post: posts.sample,
