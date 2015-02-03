@@ -14,7 +14,9 @@
  *= require_self
  */
 @import "bootstrap";
-
+body{
+  margin-bottom: 12em;
+}
 .user-info {
    margin-top: 9px;
  }
@@ -32,3 +34,4 @@
   float: left !important;
   margin-right: 18px !important;
  }
+
