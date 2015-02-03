@@ -1,11 +1,9 @@
 
 <%= simple_form_for [topic, post], html: {class: 'form-horizontal'} do |f| %>
-
-<%= f.input :title, placeholder: 'Enter post title' %>
-<%= f.input :body, input_html: { rows: 8 }, placeholder: "Enter post body" %>
-<%= f.label :image %>
-<%= f.file_field :image %>
-<%= f.hidden_field :image_cache %>
-<%= f.button :submit, 'Save this post', class: 'btn btn-success' %>
-
+  <%= f.input :title, placeholder: 'Enter post title' %>
+  <%= f.input :body, input_html: { rows: 8 }, placeholder: "Enter post body" %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache %>
+  <%= f.button :submit, 'Save this post', class: 'btn btn-success' %>
 <% end %>

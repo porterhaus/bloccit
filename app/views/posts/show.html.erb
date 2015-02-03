@@ -1,20 +1,28 @@
-<h1><%= markdown @post.title %></h1> 
+
 
 <div class="row">
   <div class="col-md-8">
-    <div class="row">
+    <h1 ><%= markdown @post.title %></h1> 
     <%= image_tag(@post.image.url) if @post.image? %>
-  </div>
+    <p class="lead"><%= markdown @post.body %></p>
     <small>
      <%= image_tag(@post.user.avatar.tiny.url, class: 'img-circle') if @post.user.avatar? %>
-     submitted <%= time_ago_in_words(@post.created_at) %> ago by
+     Submitted <%= time_ago_in_words(@post.created_at) %> ago by
      <%= @post.user.name %>
     </small>
-    <p><%= markdown @post.body %></p>
+    <hr/>
+    <h4>Comments</h4>
+    <%= render :partial => "comments/comment", :collection => @comments %>
+    <hr/>
+    <% if policy(@comments).create? %>
+      <%= render partial: "comments/form", locals: { post: @post, topic: @topic } %>
+    <% end %>
   </div>
   <div class="col-md-4">
+    <ul class="nav nav-pills nav-stacked">
     <% if policy(@post).edit? %>
-      <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+      <li><%= link_to "Edit post", edit_topic_post_path(@topic, @post) %></li>
     <% end %>
+    </ul>
   </div>
 </div>
