@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   #get 'comments_controller/create'
 
   devise_for :users
-  resources :users, only: [:update, :show]
+  resources :users, only: [:update, :show, :index]
   
   #resources :topics do
   #  resources :posts, except: [:index] do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
    resources :posts, except: [:index]
   end
 
-  resources :posts, only: [] do
+  resources :posts, only: [:index] do
     resources :comments, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
 
