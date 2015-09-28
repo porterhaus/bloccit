@@ -2,4 +2,6 @@
 
 Made with my mentor at [Bloc](http://bloc.io).
 
-[porterhaus-bloccit](https://porterhaus-bloccit.herokuapp.com/)
+URL: (https://porterhaus-bloccit.herokuapp.com/)
+
+First project during my mentorship with Bloc. Designed to teach core ruby and rails principles before moving on to other core projects. 
